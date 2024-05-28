@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+          enabled: true
+
+server:
+  port: 1236
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8765/eureka
+
+jwt:
+  secret: ${JWT_SECRET :844c1a09b1e84fb767916edce5f6fbad1401c588a0f10fb7de79c245324c4d7d3e6c62b5aec4a168cc14f957946ced574ad38cb6b44d732641f307158afd19fb}
+  prefix: Bearer
